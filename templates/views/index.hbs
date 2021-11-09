@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+    <link rel="stylesheet" href="css/styles.css">
+   <script src="https://use.fontawesome.com/9824bd922e.js"></script>
+  <title>Weather app</title>
+</head>
+<body>
+    <header>
+     {{>header}}
+     <form action="">
+       
+       <input type="text" placeholder="search for location">
+      
+       
+       <button type="submit"> <span><i class="fa fa-search"></i></span></button>
+     </form>
+     <p id="temperature"></p>
+     <p id="feels-like"></p>
+     <p id="location"></p>
+    </header>
+     <footer>
+        {{>footer}}
+     </footer>
+  
+    <script src="javascript/src.js"></script>
+</body>
+</html>
