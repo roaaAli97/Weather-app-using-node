@@ -16,7 +16,7 @@ form.addEventListener("submit",(event)=>{
  temperature.textContent="loading,please wait"
  feelsLike.textContent=""
  locationParagraph.textContent=""
-  fetch(`http://localhost:3000/weather?address=${location}`)
+  fetch(`/weather?address=${location}`)
 .then(res=>res.json())
 .then(data=>{
     console.log(data)

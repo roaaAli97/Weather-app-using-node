@@ -4,7 +4,7 @@ const hbs=require("hbs")
 const express=require('express')
 const path=require("path")
 const directoryName=path.join(__dirname,"/public")
-
+const port=process.env.PORT||3000
 console.log(directoryName)
 const viewsPath=path.join(__dirname+"/templates/views")
 const partialsPath=path.join(__dirname+"/templates/partials")
@@ -47,6 +47,6 @@ app.get("*",(req,res)=>{
  
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server is running")
 })
