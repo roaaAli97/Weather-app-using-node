@@ -29,12 +29,14 @@ app.get("/weather",(req,res)=>{
          return res.send({Error:error})
         }
         
-        forecast(latitude,longitude,(forecastError,{temperature,feelslike}={})=>{
-           if(forecastError){
+        forecast(latitude,longitude,(forecastError,{temperature,feelslike,weather_descriptions,observation_time,weather_icons}={})=>{
+           console.log(observation_time,weather_icons,weather_descriptions[0])
+           
+            if(forecastError){
              return  res.send(forecastError)
            }
           return res.send({address:query,
-        temperature,feelslike,location})
+        temperature,feelslike,weather_descriptions,observation_time,weather_icons,location})
        })
     })
     
@@ -48,5 +50,5 @@ app.get("*",(req,res)=>{
 
 
 app.listen(port,()=>{
-    console.log("Server is running")
+    console.log("Server is running on " +port )
 })
